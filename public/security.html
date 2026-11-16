@@ -86,7 +86,7 @@
 <p>we will keep you updated while a fix is in progress, tell you when it ships, and credit you in the release notes unless you ask us not to.</p>
 
 <h2>2. what this policy covers</h2>
-<p>seedless is built partnership-first. most of the load-bearing cryptography and infrastructure is delegated to external systems with their own audits. seedless orchestrates audited infrastructure. seedless itself has not been audited. our own surface is deliberately small: the app, our payouts service, and one on-chain rust program.</p>
+<p>seedless is built partnership-first. most of the load-bearing cryptography and infrastructure is delegated to external systems with their own audits. seedless itself was audited by valves security in october 2026, and every finding has been fixed. the full report is private. our own surface is deliberately small: the app, our payouts service, and one on-chain rust program.</p>
 <h3>in scope: report these to us</h3>
 <div class="table-wrap"><table>
 <tr><th>area</th><th>what it covers</th></tr>
@@ -151,7 +151,7 @@
 <li><strong>automated tests do not reach real money paths.</strong> the logic is unit-tested, including session keys, private-send sequencing, link parsing and amount handling. the paths that move real money (swaps, private sends and bank payouts) are also run by hand on mainnet with a real device, because only that proves them.</li>
 <li><strong>parts of the code grew quickly</strong> through a hackathon period, and consolidation is ongoing.</li>
 <li><strong>the on-chain controller</strong> is deployed to devnet and has not had a mainnet hardening pass.</li>
-<li><strong>not audited.</strong> seedless orchestrates audited infrastructure. seedless itself has not been audited. that is part of why this policy exists: we would rather hear from you first.</li>
+<li><strong>audited, still listening.</strong> seedless was audited by valves security in october 2026. an audit is a snapshot, not a guarantee, so this policy exists: we would rather hear from you first.</li>
 </ul>
 
 <h2>5. coordinated disclosure</h2>

@@ -60,7 +60,7 @@ Every change goes through a branch and a pull request, including one-line fixes.
 - **Design system:** everything visual comes from the tokens at the top of `public/assets/site.css`. Seedless blue `#00AEFF`, Night `#0B0F1A` (the app's own dark background), neutrals tinted toward the blue, Bricolage Grotesque for headlines and Inter for text. Legal pages use the `.legal` styles in the same file.
 - **Seedless is a money app.** Don't call it a wallet, a neobank or a beta. Say "pay a bank" or "payout", never "cash out".
 - **Don't name the payouts partner.** Call it a licensed payments partner.
-- **Audits:** the only wording is "Seedless orchestrates audited infrastructure. Seedless itself has not been audited."
+- **Audits:** seedless was audited by Valves Security (report 20 Oct 2026, private under NDA, all findings fixed). Say "audited by valves security"; never share the report.
 - **Every figure on the site must be true today.** No invented user counts, and no features that aren't in the app yet.
 
 ## The claim page
