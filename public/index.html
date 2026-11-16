@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.seedlesslabs.xyz/#org","name":"seedless labs","url":"https://www.seedlesslabs.xyz/","logo":"https://www.seedlesslabs.xyz/icon-512.png","sameAs":["https://x.com/seedlesslabs","https://github.com/seedless-labs","https://t.me/seedless_users"]},{"@type":"WebSite","@id":"https://www.seedlesslabs.xyz/#website","name":"seedless","url":"https://www.seedlesslabs.xyz/","publisher":{"@id":"https://www.seedlesslabs.xyz/#org"},"inLanguage":"en"},{"@type":"MobileApplication","name":"seedless","operatingSystem":"Android","applicationCategory":"FinanceApplication","description":"a money app for people who get paid in dollars. pay any nigerian bank, send money to anyone, hold stocks.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://www.seedlesslabs.xyz/#org"},"url":"https://www.seedlesslabs.xyz/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"is seedless a bank?","acceptedAnswer":{"@type":"Answer","text":"no. seedless is a money app. bank payouts go through a licensed nigerian payments partner, and your money never sits with us."}},{"@type":"Question","name":"who holds my money?","acceptedAnswer":{"@type":"Answer","text":"you do. seedless can't move your money. only you can, with your face or fingerprint."}},{"@type":"Question","name":"what if i lose my phone?","acceptedAnswer":{"@type":"Answer","text":"your sign-in is a passkey, and it's saved to your apple or google account, not only the phone. sign in to that account on your new phone, open seedless, and you're back in. keep that apple or google account safe, because it's your way back."}},{"@type":"Question","name":"do i need to know anything about crypto?","acceptedAnswer":{"@type":"Answer","text":"no. seedless runs on solana under the hood, but you just see dollars, naira and the people you pay."}},{"@type":"Question","name":"where can i get it?","acceptedAnswer":{"@type":"Answer","text":"seedless is live on google play, the app store, and the solana dapp store on seeker. bank payouts are live in nigeria first."}},{"@type":"Question","name":"has seedless been audited?","acceptedAnswer":{"@type":"Answer","text":"seedless orchestrates audited infrastructure. seedless itself has not been audited. read our security policy."}}]}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
@@ -60,13 +60,15 @@
       </div>
 
       <div class="flow">
-        <svg viewBox="0 0 940 40" preserveAspectRatio="none" aria-hidden="true">
-          <path class="dash" d="M140 20 H 310" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <path class="dash" d="M630 20 H 780" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
-        </svg>
-        <div class="coin" aria-hidden="true">$</div>
-        <div class="device"><img src="assets/app/home-dark.png" width="603" height="1311" alt="the seedless home screen with send, receive and to bank" /></div>
-        <div class="note" aria-hidden="true">₦</div>
+        <figure class="polaroid pl-left" aria-hidden="true">
+          <div class="shot shot-usd"><span class="chip">+ $500.00</span><b>$</b></div>
+          <figcaption>paid in dollars</figcaption>
+        </figure>
+        <div class="device"><img src="assets/app/home-dark.png" width="603" height="1311" alt="the seedless home screen with send, receive, pay and stocks" /></div>
+        <figure class="polaroid pl-right" aria-hidden="true">
+          <div class="shot shot-ngn"><span class="chip">sent to your bank</span><b>₦</b></div>
+          <figcaption>spent at home</figcaption>
+        </figure>
       </div>
     </div>
     <div class="fade"></div>
@@ -122,7 +124,7 @@
           <details><summary>earn on your dollars</summary><p>put your dollars to work and take them out any time. the rate moves with the market.</p></details>
         </div>
         <div class="stage">
-          <div class="device"><img src="assets/app/home-dark.png" width="603" height="1311" alt="" /></div>
+          <div class="device"><img src="assets/app/pay-dark.png" width="603" height="1311" alt="the seedless pay screen, enter an account number" /></div>
         </div>
       </div>
     </div>
