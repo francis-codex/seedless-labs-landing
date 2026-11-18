@@ -14,6 +14,9 @@ seedless is non-custodial: users hold their own dollars. live on the iphone app 
 - [developers](https://www.seedlesslabs.xyz/developers): open-source repos and the stack
 - [changelog](https://www.seedlesslabs.xyz/changelog): what changed, with [rss](https://www.seedlesslabs.xyz/changelog.xml)
 - [services](https://www.seedlesslabs.xyz/services): paid build work from seedless labs
+- [technical docs](https://www.seedlesslabs.xyz/technical): how seedless works under the hood
+- [demo](https://www.seedlesslabs.xyz/demo): see the app in action
+- [pitch](https://www.seedlesslabs.xyz/pitch): the seedless labs pitch
 - [security](https://www.seedlesslabs.xyz/security): how we handle security
 - [support](https://www.seedlesslabs.xyz/support): get help
 
