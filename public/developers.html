@@ -46,6 +46,7 @@
         <a href="/fees">fees</a>
         <a href="/faq">faq</a>
         <a href="/services">services</a>
+        <a href="/developers" aria-current="page">developers</a>
       </div>
       <a class="btn btn-night" href="/download">download</a>
     </div>
@@ -58,11 +59,46 @@
 <p>seedless labs builds open-source tools on solana for apps that move real money for normal people: passkey sign-in with no seed phrase, sponsored gas, spending rules for ai agents, and payouts to bank accounts.</p>
 
 <h2>quickstart</h2>
-<ol>
-<li>pick a repo below and clone it: <code>gh repo clone seedless-labs/leash</code></li>
-<li>follow the quickstart in its readme. most run on solana devnet with no setup beyond node or rust.</li>
-<li>stuck? ask in the <a href="https://t.me/seedless_users" target="_blank" rel="noopener">community on telegram</a> or open an issue on the repo.</li>
-</ol>
+<p>two ways in. each runs on solana devnet and takes a few minutes.</p>
+
+<h3>1. passkey-dwallet-controller: typecheck the client (no solana tooling needed)</h3>
+<p>you need node 20+.</p>
+<pre class="code-block"><code>git clone https://github.com/seedless-labs/passkey-dwallet-controller
+cd passkey-dwallet-controller/client
+npm ci
+npm run typecheck</code></pre>
+<p>building the program itself also needs <a href="https://github.com/dwallet-labs/ika-pre-alpha" target="_blank" rel="noopener">ika-pre-alpha</a> and solana platform-tools. the <a href="https://github.com/seedless-labs/passkey-dwallet-controller#build--deploy" target="_blank" rel="noopener">readme</a> has the steps.</p>
+
+<h3>2. leash: give an ai agent a vault it can't overspend</h3>
+<p>you need node 20+, pnpm, the solana cli and a little devnet sol.</p>
+<pre class="code-block"><code>git clone https://github.com/seedless-labs/leash
+cd leash
+pnpm install
+
+# make the keys (gitignored), fund the fees wallet on devnet
+mkdir -p .keys
+for k in owner agent fees vendor-1 vendor-2 vendor-3 decoy-1 decoy-2; do
+  solana-keygen new --no-bip39-passphrase -s -o .keys/$k.json
+done
+solana airdrop 1 $(solana-keygen pubkey .keys/fees.json) --url devnet
+
+# create your own vault with a spending limit, then prove the rules hold
+npx tsx scripts/setup.ts
+npx tsx scripts/prove.ts
+
+# run the app with a scripted model, no api key needed
+LEASH_MOCK_MODEL=1 pnpm dev</code></pre>
+<p>open http://localhost:3000 and watch the vault refuse payments outside its rules.</p>
+
+<h3>stuck?</h3>
+<p>ask in the <a href="https://t.me/seedless_users" target="_blank" rel="noopener">community on telegram</a> or open an issue on the repo.</p>
+
+<h2>docs</h2>
+<ul>
+<li><a href="/technical">technical docs</a>: how seedless works under the hood</li>
+<li><a href="/fees">fees</a>: what everything costs</li>
+<li><a href="/security">security</a>: how we handle security</li>
+</ul>
 
 <h2>open-source repos</h2>
 <ul>
@@ -102,8 +138,9 @@
           <a class="brand" href="/"><img src="assets/logo.png" alt="" />seedless</a>
           <p style="color:var(--slate);margin-top:12px;max-width:260px">the money app for people who get paid in dollars.</p>
         </div>
-        <div><h4>product</h4><ul><li><a href="/how-it-works">how it works</a></li><li><a href="/features">what you can do</a></li><li><a href="/fees">fees</a></li><li><a href="/faq">faq</a></li><li><a href="/download">download</a></li></ul></div>
-        <div><h4>company</h4><ul><li><a href="/services">services</a></li><li><a href="/support">support</a></li><li><a href="https://x.com/seedlesslabs" target="_blank" rel="noopener">x</a></li><li><a href="https://t.me/+ShXX2hovQH9hMGU0" target="_blank" rel="noopener">telegram</a></li><li><a href="https://github.com/seedless-labs" target="_blank" rel="noopener">github</a></li></ul></div>
+        <div><h4>product</h4><ul><li><a href="/how-it-works">how it works</a></li><li><a href="/features">what you can do</a></li><li><a href="/fees">fees</a></li><li><a href="/faq">faq</a></li><li><a href="/demo">demo</a></li><li><a href="/download">download</a></li></ul></div>
+        <div><h4>build</h4><ul><li><a href="/developers">developers</a></li><li><a href="/technical">technical docs</a></li><li><a href="/changelog">changelog</a></li><li><a href="/changelog.xml">rss</a></li><li><a href="/llms.txt">llms.txt</a></li><li><a href="https://github.com/seedless-labs" target="_blank" rel="noopener">github</a></li></ul></div>
+        <div><h4>company</h4><ul><li><a href="/services">services</a></li><li><a href="/support">support</a></li><li><a href="/pitch">pitch</a></li><li><a href="https://x.com/seedlesslabs" target="_blank" rel="noopener">x</a></li><li><a href="https://t.me/+ShXX2hovQH9hMGU0" target="_blank" rel="noopener">telegram</a></li></ul></div>
         <div><h4>legal</h4><ul><li><a href="/terms">terms</a></li><li><a href="/privacy">privacy</a></li><li><a href="/security">security</a></li><li><a href="/data-deletion">data deletion</a></li></ul></div>
       </div>
       <div class="fine"><span>© 2026 Seedless Labs, Inc. &amp; Seedless Labs Limited</span><span>seedless is a financial technology app, not a bank.</span></div>
