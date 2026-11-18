@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>seedless changelog</title>
+  <link>https://www.seedlesslabs.xyz/changelog</link>
+  <description>what changed in seedless, newest first.</description>
+  <language>en</language>
+  <item>
+    <title>services page</title>
+    <link>https://www.seedlesslabs.xyz/changelog</link>
+    <guid isPermaLink="false">seedless-2026-11-18</guid>
+    <pubDate>Wed, 18 Nov 2026 12:00:00 +0000</pubDate>
+    <description>seedless labs now takes on paid build work. see the services page.</description>
+  </item>
+  <item>
+    <title>seedless 1.0.6</title>
+    <link>https://www.seedlesslabs.xyz/changelog</link>
+    <guid isPermaLink="false">seedless-2026-11-04</guid>
+    <pubDate>Wed, 04 Nov 2026 12:00:00 +0000</pubDate>
+    <description>version 1.0.6 is live on the app store, google play and the solana dapp store.</description>
+  </item>
+  <item>
+    <title>seedless is live</title>
+    <link>https://www.seedlesslabs.xyz/changelog</link>
+    <guid isPermaLink="false">seedless-2026-09-24</guid>
+    <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
+    <description>seedless is live on the iphone app store, google play and the solana dapp store, with payouts to nigerian banks.</description>
+  </item>
+</channel>
+</rss>

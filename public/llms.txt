@@ -1,0 +1,25 @@
+# seedless
+
+> seedless is a money app for people who get paid in dollars. sign up with face id or a fingerprint, no seed phrase. hold usdc in your own account, send for free with gas covered, and pay out to any nigerian bank account in minutes. built on solana by seedless labs.
+
+seedless is non-custodial: users hold their own dollars. live on the iphone app store, google play and the solana dapp store since 24 sept 2026.
+
+## key pages
+- [home](https://www.seedlesslabs.xyz/): what seedless is
+- [how it works](https://www.seedlesslabs.xyz/how-it-works): sign up, receive, pay out
+- [features](https://www.seedlesslabs.xyz/features): what you can do
+- [fees](https://www.seedlesslabs.xyz/fees): 0.5% to pay a nigerian bank or swap. holding, receiving and sending are free
+- [faq](https://www.seedlesslabs.xyz/faq): common questions
+- [download](https://www.seedlesslabs.xyz/download): app store, google play, solana dapp store
+- [developers](https://www.seedlesslabs.xyz/developers): open-source repos and the stack
+- [changelog](https://www.seedlesslabs.xyz/changelog): what changed, with [rss](https://www.seedlesslabs.xyz/changelog.xml)
+- [services](https://www.seedlesslabs.xyz/services): paid build work from seedless labs
+- [security](https://www.seedlesslabs.xyz/security): how we handle security
+- [support](https://www.seedlesslabs.xyz/support): get help
+
+## open source
+- [github.com/seedless-labs](https://github.com/seedless-labs): leash, leash-pay, strom, hermes-money-rules, passkey-dwallet-controller, deadcheque, mermail-settle-to-bank
+
+## community
+- x: [@seedlesslabs](https://x.com/seedlesslabs)
+- telegram: [t.me/seedless_users](https://t.me/seedless_users)
