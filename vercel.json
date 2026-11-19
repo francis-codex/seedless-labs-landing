@@ -86,6 +86,76 @@
       "source": "/downloads/seeker",
       "destination": "https://github.com/seedless-labs/seedless-labs-landing/releases/download/clockin-1.0.4/seedless-1.0.4-seeker.apk",
       "permanent": false
+    },
+    {
+      "source": "/darkpaper",
+      "destination": "/technical",
+      "permanent": true
+    },
+    {
+      "source": "/index-old",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v2",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v3",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v4",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v5",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/og-source",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/docs",
+      "destination": "/developers",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/fees",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/changelog",
+      "permanent": true
+    },
+    {
+      "source": "/beta",
+      "destination": "/download",
+      "permanent": true
+    },
+    {
+      "source": "/waitlist",
+      "destination": "/download",
+      "permanent": true
+    },
+    {
+      "source": "/app",
+      "destination": "/download",
+      "permanent": true
     }
   ]
 }
