@@ -89,7 +89,7 @@
     },
     {
       "source": "/darkpaper",
-      "destination": "/how-it-works",
+      "destination": "/technical",
       "permanent": true
     },
     {
