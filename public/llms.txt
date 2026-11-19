@@ -12,11 +12,11 @@ seedless is non-custodial: users hold their own dollars. live on the iphone app 
 - [faq](https://www.seedlesslabs.xyz/faq): common questions
 - [download](https://www.seedlesslabs.xyz/download): app store, google play, solana dapp store
 - [developers](https://www.seedlesslabs.xyz/developers): open-source repos and the stack
+- [how it's built](https://www.seedlesslabs.xyz/technical): passkey sign-in, session signing, the paymaster that covers network fees, payouts, stack
+- [pitch](https://www.seedlesslabs.xyz/pitch): what seedless is, who it is for, traction as of 18 nov 2026
+- [demo](https://www.seedlesslabs.xyz/demo): the app in three steps, with screens
 - [changelog](https://www.seedlesslabs.xyz/changelog): what changed, with [rss](https://www.seedlesslabs.xyz/changelog.xml)
 - [services](https://www.seedlesslabs.xyz/services): paid build work from seedless labs
-- [technical docs](https://www.seedlesslabs.xyz/technical): how seedless works under the hood
-- [demo](https://www.seedlesslabs.xyz/demo): see the app in action
-- [pitch](https://www.seedlesslabs.xyz/pitch): the seedless labs pitch
 - [security](https://www.seedlesslabs.xyz/security): how we handle security
 - [support](https://www.seedlesslabs.xyz/support): get help
 

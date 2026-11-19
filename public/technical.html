@@ -1,45 +1,133 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Technical — Seedless</title>
-<meta name="description" content="Seedless technical video for Stocklana.">
-<meta name="robots" content="noindex">
-<link rel="icon" href="/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-<style>
-:root{--blue:#00AEFD;--blue2:#009FEC;--ink:#0B2545;--muted:#5A6B84;--bg:#fff;--line:#E6ECF3}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,Segoe UI,sans-serif;line-height:1.55}
-.wrap{max-width:900px;margin:0 auto;padding:48px 16px 72px}
-a{color:var(--blue2)}
-.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 8px}
-h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;text-wrap:balance}
-.lede{font-size:18px;color:var(--muted);margin:0 0 32px;max-width:62ch}
-video{width:100%;max-width:100%;border-radius:14px;border:1px solid var(--line);background:#000;display:block}
-.meta{margin-top:14px;font-size:14px;color:var(--muted)}
-.nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:15px}
-.card{border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 18px}
-.card h2{font-size:18px;margin:0 0 6px}
-.card p{margin:0;color:var(--muted);font-size:15px}
-.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
-.shots img{width:100%;border-radius:12px;border:1px solid var(--line)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1220;--ink:#F5F7FA;--muted:#9CA3AF;--line:#1E2A3C}}
-:root[data-theme="dark"]{--bg:#0A1220;--ink:#F5F7FA;--muted:#9CA3AF;--line:#1E2A3C}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>how seedless is built | seedless</title>
+  <meta name="description" content="how seedless is built: passkey sign-in on solana, network fees paid by seedless, payouts to nigerian banks with the account name shown first." />
+  <link rel="canonical" href="https://www.seedlesslabs.xyz/technical" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#00AEFF" />
+  <meta property="og:site_name" content="seedless" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_NG" />
+  <meta property="og:url" content="https://www.seedlesslabs.xyz/technical" />
+  <meta property="og:title" content="how seedless is built | seedless" />
+  <meta property="og:description" content="how seedless is built: passkey sign-in on solana, network fees paid by seedless, payouts to nigerian banks with the account name shown first." />
+  <meta property="og:image" content="https://www.seedlesslabs.xyz/assets/og.png?v=20261016" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta property="og:image:alt" content="seedless: earn in dollars, spend at home" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@seedlesslabs" />
+  <meta name="twitter:title" content="how seedless is built | seedless" />
+  <meta name="twitter:description" content="how seedless is built: passkey sign-in on solana, network fees paid by seedless, payouts to nigerian banks with the account name shown first." />
+  <meta name="twitter:image" content="https://www.seedlesslabs.xyz/assets/og.png?v=20261016" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.seedlesslabs.xyz/#org","name":"seedless labs","url":"https://www.seedlesslabs.xyz/","logo":"https://www.seedlesslabs.xyz/icon-512.png","sameAs":["https://x.com/seedlesslabs","https://github.com/seedless-labs","https://t.me/seedless_users"]},{"@type":"WebSite","@id":"https://www.seedlesslabs.xyz/#website","name":"seedless","url":"https://www.seedlesslabs.xyz/","publisher":{"@id":"https://www.seedlesslabs.xyz/#org"},"inLanguage":"en"}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
-<main class="wrap">
-<p class="eyebrow">Seedless · Stocklana</p>
-<h1>How it is built</h1>
-<p class="lede">The architecture: passkey signing, session scope, and how a payout actually moves.</p>
-<video controls preload="metadata" playsinline src="/assets/video/seedless-technical.mp4"></video><p class="meta">2:06 · no voiceover, captions on screen.</p>
-<nav class="nav">
-<a href="/demo">Demo</a><a href="/pitch">Pitch</a><a href="/technical">Technical</a><a href="/">seedlesslabs.xyz</a><a href="/how-it-works">how it works</a><a href="/fees">fees</a><a href="/developers">developers</a><a href="/changelog">changelog</a><a href="/support">support</a><a href="/services">services</a><a href="https://github.com/seedless-labs">GitHub</a>
-</nav>
-</main>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="assets/logo.png" alt="" />seedless</a>
+      <div class="links">
+        <a href="/how-it-works">how it works</a>
+        <a href="/features">what you can do</a>
+        <a href="/fees">fees</a>
+        <a href="/faq">faq</a>
+        <a href="/services">services</a>
+        <a href="/developers">developers</a>
+      </div>
+      <a class="btn btn-night" href="/download">download</a>
+    </div>
+  </nav>
+
+  <main class="legal">
+    <div class="wrap legal-wrap">
+      <p class="eyebrow">build</p>
+      <h1 class="display">how seedless is built</h1>
+<p>seedless is a money app for people who get paid in dollars. under the hood it runs on solana. this page is the short technical version: what signs, who pays the fees, and what we run ourselves.</p>
+
+<h2>sign-in: a passkey, no seed phrase</h2>
+<p>every account is a smart account on solana, built on lazorkit. the key that controls it is a passkey on your phone, unlocked with face ID or fingerprint. there is no seed phrase to write down and no password to leak.</p>
+<p>seedless is non-custodial. your passkey signs every move of your money. we never hold your funds and we can't move them for you.</p>
+
+<h2>session signing</h2>
+<p>for quick usdc sends the app can open a session, so you don't face-scan for every tap. a session lasts about a day and can only send usdc, up to a cap per send and per session. those rules are enforced on chain by the lazorkit program, so they hold even if the session key is taken from the phone. anything else, payouts included, asks for your passkey.</p>
+
+<h2>network fees: we pay them</h2>
+<p>you never need sol to use seedless. our own paymaster signs as the fee payer and covers the network fee. it runs in our api and pays from a dedicated gas pool, with guardrails before it signs anything:</p>
+<ul>
+<li>it only signs transactions whose instructions are lazorkit account instructions, so no other program can be handed the fee payer</li>
+<li>priority fees are capped, so a transaction can't ask the pool for an outsized fee</li>
+<li>every transaction is simulated first, and it is refused if the pool would lose more than the rent and fee of a new account</li>
+<li>the pool balance is watched, and the team gets an alert with the address before it runs low</li>
+</ul>
+
+<h2>payouts to nigerian banks</h2>
+<p>you pick a bank and an account number, and seedless shows the account name before you confirm. you see the fee before you pay, every time: 0.5% on a payout, see <a href="/fees">fees</a>.</p>
+
+<h2>stack</h2>
+<ul>
+<li>chain: solana mainnet</li>
+<li>app: react native and expo, typescript, ios and android</li>
+<li>api: typescript on the edge</li>
+<li>on-chain and tooling: rust and typescript, open source at <a href="https://github.com/seedless-labs" target="_blank" rel="noopener">github.com/seedless-labs</a></li>
+</ul>
+
+<h2>security</h2>
+<p>seedless was audited by valves security in october 2026, and every finding has been fixed. to report a problem privately, read the <a href="/security">security policy</a>.</p>
+
+<h2>more</h2>
+<ul>
+<li><a href="/how-it-works">how it works</a>: the three steps, without the jargon</li>
+<li><a href="/developers">developers</a>: our open-source tools and a quickstart</li>
+<li><a href="/changelog">changelog</a>: what shipped and when</li>
+</ul>
+    </div>
+  </main>
+
+  <section class="community">
+    <div class="wrap">
+      <div class="panel">
+        <div>
+          <h2 class="display">come build it with us.</h2>
+          <p>talk to the people building it, tell us what's broken, and shape what we build next.</p>
+        </div>
+        <div class="rooms">
+          <a class="room" href="https://t.me/seedless_users" target="_blank" rel="noopener"><div><b>seedless users</b><small>community of seedless users</small></div><span>join</span></a>
+          <a class="room" href="https://t.me/+ShXX2hovQH9hMGU0" target="_blank" rel="noopener"><div><b>seedless</b><small>the main seedless group on telegram</small></div><span>join</span></a>
+          <a class="room" href="https://x.com/seedlesslabs" target="_blank" rel="noopener"><div><b>@seedlesslabs</b><small>updates on x</small></div><span>follow</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fgrid">
+        <div>
+          <a class="brand" href="/"><img src="assets/logo.png" alt="" />seedless</a>
+          <p style="color:var(--slate);margin-top:12px;max-width:260px">the money app for people who get paid in dollars.</p>
+        </div>
+        <div><h4>product</h4><ul><li><a href="/how-it-works">how it works</a></li><li><a href="/features">what you can do</a></li><li><a href="/fees">fees</a></li><li><a href="/faq">faq</a></li><li><a href="/demo">demo</a></li><li><a href="/download">download</a></li></ul></div>
+        <div><h4>build</h4><ul><li><a href="/developers">developers</a></li><li><a href="/technical">how it's built</a></li><li><a href="/changelog">changelog</a></li><li><a href="/changelog.xml">rss</a></li><li><a href="/llms.txt">llms.txt</a></li><li><a href="https://github.com/seedless-labs" target="_blank" rel="noopener">github</a></li></ul></div>
+        <div><h4>company</h4><ul><li><a href="/services">services</a></li><li><a href="/pitch">pitch</a></li><li><a href="/support">support</a></li><li><a href="https://x.com/seedlesslabs" target="_blank" rel="noopener">x</a></li><li><a href="https://t.me/+ShXX2hovQH9hMGU0" target="_blank" rel="noopener">telegram</a></li></ul></div>
+        <div><h4>legal</h4><ul><li><a href="/terms">terms</a></li><li><a href="/privacy">privacy</a></li><li><a href="/security">security</a></li><li><a href="/data-deletion">data deletion</a></li></ul></div>
+      </div>
+      <div class="fine"><span>© 2026 Seedless Labs, Inc. &amp; Seedless Labs Limited</span><span>seedless is a financial technology app, not a bank.</span></div>
+    </div>
+  </footer>
+
 </body>
 </html>
